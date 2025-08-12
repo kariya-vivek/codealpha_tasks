@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Image Gallery — Next/Prev + Lightbox + Filters</title>
+  <link rel="stylesheet" href="imggallerystyles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1>Responsive Image Gallery</h1>
+        <p class="lead">Click an image to open lightbox. Use categories and filters. Keyboard: ← → Esc</p>
+      </div>
+      <div class="controls">
+        <div class="filters" role="toolbar" aria-label="Categories">
+          <button class="btn toggle active" data-cat="all">All</button>
+          <button class="btn toggle" data-cat="nature">Nature</button>
+          <button class="btn toggle" data-cat="city">City</button>
+          <button class="btn toggle" data-cat="people">People</button>
+        </div>
+        <div style="width:10px"></div>
+        <div class="filters" aria-label="Image filters">
+          <button class="btn" id="filter-none">No Filter</button>
+          <button class="btn" id="filter-gray">Grayscale</button>
+          <button class="btn" id="filter-sepia">Sepia</button>
+          <button class="btn" id="filter-sat">Saturate</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="grid" id="gallery" aria-live="polite">
+        <div class="card" tabindex="0" data-index="0" data-cat="nature" aria-label="Mountain lake">
+          <img src="img3.jpeg" alt="Mountain lake with reflection">
+          <div class="meta">Mountain lake</div>
+        </div>
+        <div class="card" tabindex="0" data-index="1" data-cat="city" aria-label="City skyline at night">
+          <img src="img6.jpeg" alt="City skyline at night">
+          <div class="meta">City skyline</div>
+        </div>
+        <div class="card" tabindex="0" data-index="2" data-cat="people" aria-label="Portrait woman smiling">
+          <img src="img7.jpeg" alt="Portrait of a woman smiling">
+          <div class="meta">Portrait</div>
+        </div>
+        <div class="card" tabindex="0" data-index="3" data-cat="nature" aria-label="Forest path">
+          <img src="img8.jpeg" alt="Forest path">
+          <div class="meta">Forest path</div>
+        </div>
+        <div class="card" tabindex="0" data-index="4" data-cat="city" aria-label="Old street">
+          <img src="img4.jpeg" alt="Old street with buildings">
+          <div class="meta">Old street</div>
+        </div>
+          <div class="card" tabindex="0" data-index="5" data-cat="people" aria-label="Children playing">
+			<img src="img2.jpeg" alt="Child playing">
+			<div class="meta">Child playing</div>
+
+		</div>
+        <div class="card" tabindex="0" data-index="6" data-cat="nature" aria-label="Seaside cliffs">
+          <img src="img5.jpeg" alt="Seaside cliffs">
+          <div class="meta">Seaside cliffs</div>
+        </div>
+       <div class="card" tabindex="0" data-index="7" data-cat="city" aria-label="Modern architecture">
+		<img src="img1.jpeg" alt="Modern architecture">
+		<div class="meta">Architecture</div>
+	</div>
+      </section>
+
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="lb-inner">
+          <button class="nav-btn nav-prev" id="lb-prev" aria-label="Previous image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <img id="lb-image" src="" alt="">
+          <button class="nav-btn nav-next" id="lb-next" aria-label="Next image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+          <button class="close-btn" id="lb-close" aria-label="Close">✕</button>
+          <div class="lb-caption" id="lb-caption"></div>
+          <div class="thumb-row" id="thumbs"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>Tip: try keyboard arrows ← → and Esc to navigate. Replace the sample images with your own image URLs.</footer>
+  </div>
+
+  <script src="imagegallery.js"></script>
+</body>
+</html>
